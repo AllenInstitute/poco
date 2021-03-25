@@ -24,6 +24,19 @@
 #include "Poco/Void.h"
 #include "Poco/FileStream.h"
 
+#if defined(__BORLANDC__) && defined(__clang__) && defined(_WIN64)
+
+#include <float.h>
+
+namespace std
+{
+
+double _RTLENTRY _EXPFUNC  _copysign(double __da, double __db)
+{
+    return __db;
+}
+}
+#endif
 
 namespace Poco {
 

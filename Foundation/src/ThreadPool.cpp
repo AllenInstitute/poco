@@ -27,6 +27,7 @@
 
 namespace Poco {
 
+using std::time;
 
 class PooledThread: public Runnable
 {
